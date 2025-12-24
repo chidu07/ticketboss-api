@@ -13,3 +13,9 @@ app.use("/", routes);
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
+
+app.use((req, res) => {
+  res.status(404).json({
+    error: "URL not found",
+  });
+});
